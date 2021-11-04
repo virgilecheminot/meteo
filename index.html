@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,21 +14,42 @@
 </head>
 
 
+
 <body onload="onloadfunc()">
-    <div class="bg">
+    <div class="content">
+        <div class="header txtcenter">
+            <h1>Météo <span id="ville"></span>
+        </div>
+        <div class="soleil">
+            lever soleil
+            <progress id="soleil" max="100" value="20"></progress>
+            coucher soleil
+        </div>
         <div id="nuage" style="text-align: center; display: flex; justify-content: center; align-items: center;">
             <p id="cloud percentage" style="color: black;"></p>
         </div>
-    </div>
-    <div class="content">
-        <div>
-            <h1>Météo <span id="ville"></span></h1>
-            <p id="temp"></p>
-            <p id="ressenti"></p>
-            <!-- <input type="range" id="slider" name="Température" min="0" max="35" onchange="onloadfunc()"> -->
-            <p id="temp arbitraire"></p>
-            <p id="humidity"></p>
+        <div class="data">
+            <div class="marg">
+                <p>
+                    Température : <span id="temp"></span>°C
+                </p>
+            </div>
+            <div class="marg">
+                <p>
+                    Ressenti : <span id="ressenti"></span>°C
+                </p>
+            </div>
+            <div class="marg">
+                Humidité : <span id="humidity"></span>%
+            </div>
         </div>
+        <!-- <div>
+            <input type="range" id="slider" name="Température" min="0" max="35" onchange="onloadfunc()">
+            <p id="temp arbitraire"></p>
+        </div> -->
     </div>
+
+
 </body>
+
 </html>

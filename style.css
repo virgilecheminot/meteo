@@ -1,5 +1,4 @@
 * {
-    color: white;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,12 +11,43 @@
 }
 
 .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 90vh;
+    justify-content: center;
 }
 
-.content div {
+
+.txtcenter {
     text-align: center;
+}
+
+.data {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    color: white;
+}
+
+.marg {
+    margin: 10px;
+}
+
+.header {
+    position: absolute;
+    top: 10px;
+}
+
+.soleil {
+    position: absolute;
+    top: 30%;
+
 }

@@ -1,18 +1,18 @@
 var callBackGetSuccess = function (data) {
     console.log("données api", data);
     // alert("Meteo temp : " + data.main.temp)
-    document.getElementById("temp").innerHTML =
-        "La température est de " + data.main.temp + "°C";
-    document.getElementById("ressenti").innerHTML =
-        "Température ressentie : " + data.main.feels_like + "°C";
+    document.getElementById("temp").innerHTML = data.main.temp;
+    document.getElementById("ressenti").innerHTML = data.main.feels_like;
     document.getElementById("nuage").style.opacity = data.clouds.all / 100;
     document.getElementById("cloud percentage").innerHTML =
         "Couverture nuageuse : " + data.clouds.all + "%";
-    document.getElementById("ville").innerHTML =
-        data.name;
+    document.getElementById("ville").innerHTML = data.name;
+
     var temp = data.main.feels_like;
-    // temp = document.getElementById("slider").value
-    // document.getElementById("temp arbitraire").innerHTML = temp;
+    ////////////////////////////////////////////////////////////////////
+    //   temp = document.getElementById("slider").value;              //
+    //   document.getElementById("temp arbitraire").innerHTML = temp; //
+    ////////////////////////////////////////////////////////////////////
     var hueMax = 255;
     if (temp <= 17.5) {
         var blue = (-hueMax / 17.5) * temp + hueMax;
@@ -30,8 +30,19 @@ var callBackGetSuccess = function (data) {
     var color = new String("rgb(" + red + "," + green + "," + blue + ")");
     var bgVal = document.getElementsByTagName("body");
     bgVal[0].style.background = color;
-    document.getElementById("humidity").innerHTML =
-        "Humidité : " + data.main.humidity + "%";
+    if (blue + green + red > 280) {
+        document.getElementsByTagName("body")[0].style.color = "black";
+    } else {
+        document.getElementsByTagName("body")[0].style.color = "white";
+    }
+
+    document.getElementById("humidity").innerHTML = data.main.humidity;
+
+    var lever = data.sys.sunrise;
+    var coucher = data.sys.sunset;
+    var temps = data.dt;
+    var poucentage = ((temps - lever) / (coucher - lever)) * 100;
+    document.getElementById("soleil").value = poucentage;
 };
 
 function onloadfunc() {
