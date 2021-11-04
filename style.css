@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 #nuage{
@@ -44,10 +44,32 @@ body {
 .header {
     position: absolute;
     top: 10px;
+    width: 100vw;
+}
+
+.soleilinfo {
+    position: absolute;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
 }
 
 .soleil {
-    position: absolute;
-    top: 30%;
+    min-width: auto;
+    max-width: 1000px;
+    width: 50%;
+    overflow: hidden;
+    height: 2rem;
+    border-radius:1rem;
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+.progress {
+    height: 100%;
+    width: 50%;
+    background-color: rgb(219, 199, 13);
 
 }

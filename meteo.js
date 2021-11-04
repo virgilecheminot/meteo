@@ -41,8 +41,8 @@ var callBackGetSuccess = function (data) {
     var lever = data.sys.sunrise;
     var coucher = data.sys.sunset;
     var temps = data.dt;
-    var poucentage = ((temps - lever) / (coucher - lever)) * 100;
-    document.getElementById("soleil").value = poucentage;
+    var pourcentage = ((temps - lever) / (coucher - lever)) * 100;
+    document.getElementsByClassName("progress")[0].style.width = pourcentage + "%";
 };
 
 function onloadfunc() {
