@@ -1,3 +1,5 @@
+var key = '76826def575148a3aca2ad66f8eab4c3';
+
 var callBackGetSuccess = function (data) {
     console.log("données api", data);
     // alert("Meteo temp : " + data.main.temp)
@@ -7,6 +9,9 @@ var callBackGetSuccess = function (data) {
     document.getElementById("cloud percentage").innerHTML =
         "Couverture nuageuse : " + data.clouds.all + "%";
     document.getElementById("ville").innerHTML = data.name;
+    var icon = data.weather[0].icon;
+    document.getElementById("icon").src = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+    document.getElementById("meteo").innerHTML = data.weather[0].description
 
     var temp = data.main.feels_like;
     ////////////////////////////////////////////////////////////////////
@@ -62,7 +67,7 @@ function onloadfunc() {
             lat +
             "&lon=" +
             long +
-            "&appid=45588b05eb419a5ff7319f7d44a6ca74&units=metric&lang=fr";
+            "&appid="+key+"&units=metric&lang=fr";
         $.get(url, callBackGetSuccess)
             .done(function () {
                 // alert("second success");

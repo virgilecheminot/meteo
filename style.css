@@ -73,3 +73,8 @@ body {
     background-color: rgb(219, 199, 13);
 
 }
+
+.alignh {
+    display: flex;
+    align-items: center;
+}
