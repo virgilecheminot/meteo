@@ -10,7 +10,7 @@ var callBackGetSuccess = function (data) {
         "Couverture nuageuse : " + data.clouds.all + "%";
     document.getElementById("ville").innerHTML = data.name;
     var icon = data.weather[0].icon;
-    document.getElementById("icon").src = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+    document.getElementById("icon").src = "https://openweathermap.org/img/wn/"+icon+"@2x.png";
     document.getElementById("meteo").innerHTML = data.weather[0].description
 
     var temp = data.main.feels_like;
