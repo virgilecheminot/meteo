@@ -48,13 +48,12 @@ body {
 }
 
 .soleilinfo {
-    position: absolute;
-    top: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: fit-content;
+    margin-bottom: 50px;
 }
 
 .soleil {
